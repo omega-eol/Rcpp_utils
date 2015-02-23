@@ -13,7 +13,7 @@ typedef MSpMat::InnerIterator InIterMat;
 
 // convert sparse matrix to SVM lite format
 // [[Rcpp::export]]
-CharacterVector convertToSVMLiteF(MSpMat X, NumericVector labels = NumericVector::create()){ // sparse option
+CharacterVector convertToSVMLite(MSpMat X, NumericVector labels = NumericVector::create()){
      // number of columns
      int ncol = X.cols();
      int n_labels = labels.size();

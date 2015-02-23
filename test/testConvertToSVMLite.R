@@ -18,5 +18,5 @@ l = round(runif(100, 0, 1));
 
 # convert to SVM lite format
 ptm = proc.time();
-svm_lite = convertToSVMLiteF(data, l);
+svm_lite = convertToSVMLite(data, l);
 print(proc.time()-ptm);
