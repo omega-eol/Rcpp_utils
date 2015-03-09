@@ -1,5 +1,5 @@
 
-A set of useful functions writen in C for R using Rcpp package.
+A set of useful functions written in C for R using Rcpp package.
 
 1. `code/generateRandomSparseMatrix(ratio, nrow, ncol)` - generates a random sparse matrix with nrow rows and ncol columns. Number of non-zero elements is as calculated as `ceiling(nrow*ncol*ratio)`.
 
