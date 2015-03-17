@@ -4,7 +4,6 @@
 #include <RcppArmadillo.h>
 #include <RcppEigen.h>
 #include <Rcpp.h>
-#include <string>
 
 using namespace Rcpp;
 
@@ -23,22 +22,22 @@ CharacterVector convertToSVMLite(MSpMat X, NumericVector labels = NumericVector:
      
      // for each column
      for (int j = 0; j < ncol; j++) {
-        // start from empty string
-        String line = "";
+        // start from empty string stream
+        std::ostringstream os;
         
         // add lebels if needed
         if (n_labels > 0) {
              int l = labels[j];
              if (l == 0) l = -1;
-             line += std::to_string(l) + " ";
+             os << l << " ";
         };
         
         // for each non-zero element in the j column
         for (InIterMat i_(X, j); i_; ++i_) {
-             line += std::to_string(i_.row() + 1) + ":" + std::to_string(i_.value()) + " ";
+             os << i_.row() + 1 << ":" << i_.value() <<" ";
         };
         
-        out[j] = line;
+        out[j] = os.str();
      }; // end j loop
      
      return out;
