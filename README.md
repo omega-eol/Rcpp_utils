@@ -13,3 +13,10 @@ A set of useful functions written in C for R using Rcpp package.
 1. Rcpp package
 2. RcppEigen package
 3. RcppArmadillo package
+
+### For Mac Users
+In case you have the following error while compiling the Rcpp functions:
+`ld: library not found for -lgfortran`
+1. First install `brew install gcc`
+2. Add this line `FLIBS=-L/usr/local/Cellar/gcc/5.2.0/bin/gfortran` to `~/.R/Makevars` file.
+
